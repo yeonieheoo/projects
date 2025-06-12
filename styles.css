@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+:root {
+  --font-body: 'DM Mono', monospace;
+  --color-text: rgba(0, 0, 0, 0.85);
+  --color-subtle: rgba(0, 0, 0, 0.6);
+  --accent: #000;
+  --sidebar-width: 280px;
+  --line-height: 1.7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #fff;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: var(--line-height);
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  padding: 2rem;
+  border-right: 1px solid #eee;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+h1 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
+
+.tagline {
+  color: var(--color-subtle);
+  margin-bottom: 0.75rem;
+}
+
+.contact-inline {
+  font-size: 0.9rem;
+  color: var(--color-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.contact-inline a {
+  text-decoration: none;
+  color: var(--color-subtle);
+  font-weight: normal;
+}
+
+.contact-inline a:hover {
+  text-decoration: underline;
+}
+
+.contact-inline span {
+  margin: 0 0.4rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.links a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1;
+  padding: 3rem 4rem;
+  max-width: 900px;
+}
+
+.project-detail {
+  display: block;
+}
+
+.project-detail h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail p,
+.project-detail div,
+.project-detail ol,
+.project-detail ul,
+.project-detail iframe,
+.project-detail img {
+  margin-bottom: 1.5rem;
+}
+
+.project-detail ol {
+  padding-left: 1.5rem;
+}
+
+.project-detail li {
+  margin-bottom: 0.6rem;
+}
+
+.project-detail a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.project-detail a:hover {
+  text-decoration: none;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+iframe {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
