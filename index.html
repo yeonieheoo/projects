@@ -9,10 +9,12 @@
 <body>
   <main class="wrapper">
     <nav class="sidebar">
-      <h1><a href="#" onclick="goHome()">Yeonie Heo</a></h1>
-      <p class="tagline">Data enthusiast, computational social scientist</p>
+      <h1><a href="" onclick="goHome()">Yeonie Heo</a></h1>
+      <p class="tagline">Exploring data that shapes decisions</p>
 
       <div class="contact-inline">
+        <a href="images/YeonieHeo_Resume.pdf" target="_blank">Resume</a>
+        <span>·</span>
         <a href="mailto:sh5874@nyu.edu" target="_blank">Email</a>
         <span>·</span>
         <a href="https://github.com/yeonieheoo" target="_blank">GitHub</a>
@@ -21,10 +23,11 @@
       </div>
 
       <div class="links">
-        <a href="#" onclick="showProject('memory')">MemoryCompanion</a>
-        <a href="#" onclick="showProject('politics')">Political Preference Prediction Model</a>
-        <a href="#" onclick="showProject('recipe')">Reciple Grandma</a>
-        <a href="#" onclick="showProject('proximity')">Proximity</a>
+        <a href="#memorycompanion" onclick="showProject('memory')">MemoryCompanion</a>
+        <a href="#oscar" onclick="showProject('oscar')">Oscar Film Trend</a> 
+        <a href="#politicalprediction" onclick="showProject('politics')">Political Preference Prediction Model</a>
+        <a href="#recipe" onclick="showProject('recipe')">Reciple Grandma</a>
+        <a href="#proximity" onclick="showProject('proximity')">Proximity</a>
       </div>
     </nav>
 
@@ -33,53 +36,80 @@
       <div id="memory" class="project-detail">
         <h2>MemoryCompanion</h2>
         <p>A published research project that builds a cutting-edge digital health tool designed to enhance care for <i>Alzheimer's disease (AD) patients</i> using generative AI, specifically through GPT technology.</p>
+        <img src="images/Poster.png" alt="Poster" class="centered-image" />
+        <!-- <img src="images/Poster.png" alt="Poster" style="width: 50%;" /> -->
         <p>The system personalizes interactions using voice cloning and talking-face mechanisms, making communication feel more familiar and human-like for patients. This aims to alleviate social isolation and improve cognitive function and daily communication for AD patients.</p>
         <p><strong>MemoryCompanion is built into 4 modules:</strong></p>
         <ol>
           <li><b>Real Time Speech-to-Text Module</b>: enables real-time vocal communication between AD patients and the GPT model</li>
           <li><b>Patient-Centric MemoryCompanion Model Fine-Tuning</b>: processes transcribed input into a tailored AD-Patient-GPT language model for personalized conversation</li>
-          <li><b>Text-to-Speech Synthesization</b>: voices the GPT output</li>
-          <li><b>Face Construction</b>: emotion-sensitive talking-face interface for authentic interaction</li>
+          <li><b>Text-to-Speech Synthesization</b>: voices the GPT output into voice of each user's family member</li>
+          <li><b>Face Construction</b>: emotion-sensitive talking-face interface of the familiy member for authentic interaction</li>
         </ol>
-        <p>This research was published at ML4H 2023 in New Orleans, and presented at QUWA (2023) and NYUAD AI Workshop (2024).</p>
+        <p>This research was published at Machina Learning for Health (ML4H) in 2023, and presented at QUWA: Sustainable Women Empowerment in Research and Innovation (2023) and NYU Abu Dhabi AI Workshop (2024). </p> <a href="https://arxiv.org/abs/2311.14730">Published Paper</a></p>
+        <iframe src="images/OfficialMemoryCompanion.pdf" width="100%" height="500"></iframe>
+      </div>
+
+      <!-- Oscar -->
+      <div id="oscar" class="project-detail hidden">
+        <h2>Oscar Film Trend</h2>
+        <p>A data analysis on the thematic evolution and depiction of societal issues in Oscar-winning films from 1927 to 2021, questioning a gradual uptick in social inclusiveness and diversity.</p>
+        <p>Utilizing web-scraping techniques, data was harvested from Wikipedia and Rotten Tomatoes, concentrating on plots and reviews of Best Picture awardees.</p>
+        <!-- <img src="images/Oscar_2.png" alt="Oscar 2" class="centered-image"/>
+        <img src="images/Oscar_1.png" alt="Oscar 1" class="centered-image"/> -->
+        <div class="image-row">
+          <img src="images/Oscar_2.png" alt="Oscar 2" class="side-image" />
+          <img src="images/Oscar_1.png" alt="Oscar 1" class="side-image" />
+        </div>
+        
+        <ol>
+          <li><b>Plot Analysis</b>: Employing the 'stm' library in R for Structural Topic Modeling (STM) alongside textnets for plot summary analysis, we identified 10 predominant themes such as Crime, Family, War, and Empire. Despite a clear genre preference, a decrease in Love-themed movies was noted. Through textnets, thematic interconnections across decades were unveiled, suggesting avenues for deeper future investigations into these linkages.</li>
+          <li><b>Review Analysis</b>: Differentiating between audience and critic reviews unveiled distinct preferences: audiences often discussed actors and filmic elements generically, whereas critics delved into technical merits and realism. Contrary to expectations, reviews trended towards casual recommendations rather than analytical deep dives.</li>
+        </ol>
+        <iframe src="images/Oscar.pdf" width="100%" height="500"></iframe>
       </div>
 
       <!-- Political Preference -->
       <div id="politics" class="project-detail hidden">
         <h2>Political Preference Prediction Model</h2>
-        <p>A study that explores the possibility of predicting political preferences based on Twitter content during the 2020 U.S. election cycle.</p>
-        <p>Using Natural Language Processing (NLP), tweets were analyzed for sentiment and topic frequency to correlate with political affiliations.</p>
+        <p>A machine learning-based study that explores the possibility of predicting political preferences based on Twitter content during the 2020 U.S. election cycle.</p>
+        <p>Natural Language Processing: tweets were analyzed for sentiment and topic frequency to correlate with political affiliations.</p>
         <ol>
           <li><b>Collect Tweets</b>: Dataset from Kaggle with 1.72M tweets tagged #JoeBiden and #DonaldTrump</li>
           <li><b>Identify Political Topics</b>: Based on independent, nonpartisan sources</li>
           <li><b>Topic Tracking</b>: Using spaCy to detect topic frequency and build feature vectors</li>
-          <li><b>Sentiment Analysis</b>: Using VADER to score each tweet</li>
+          <li><b>Sentiment Analysis</b>: Using VADER to score each tweet and trained with SVC, Naive Bayes, Logistic Regression, and KNN models</li>
         </ol>
-        <p>Models used: <i>SVC</i>, <i>Naive Bayes</i>, <i>Logistic Regression</i>, <i>KNN</i>. Results show the potential of social media data in political forecasting.</p>
-        <iframe src="assets/images/projects_detail/political/PoliticalPreferencePredictor.pdf" width="100%" height="300"></iframe>
+        <iframe src="images/PoliticalPreference.pdf" width="100%" height="500"></iframe>
       </div>
 
       <!-- Reciple Grandma -->
       <div id="recipe" class="project-detail hidden">
         <h2>Reciple Grandma</h2>
         <p>A mobile app to recommend recipes based on ingredients you already have.</p>
-        <p>Built using full stack technologies (JavaScript, MongoDB, Docker, Nodemon). <a href="https://github.com/yeonieheoo/final-project-team-recipe-grandma">GitHub Repo</a></p>
+        <p>This application stands out by providing a user-friendly platform where individuals can effortlessly receive tailored recipe recommendations by simply inputting their available ingredients.</p>
+        <p>Coded in JavaScript, this initiative spans the full stack of development, utilizing a robust stack of technologies including JavaScript, MongoDB, Nodemon, Docker, among others, to build a seamless and interactive application. <a href="https://github.com/yeonieheoo/final-project-team-recipe-grandma">GitHub Repo</a></p>
+        <img src="images/RecipeGrandma_1.png" alt="App" class="centered-image"/>
 
-        <div class="flex-container">
-          <p><strong>Frontend:</strong> Responsive, intuitive interface with modern JS frameworks.</p>
-          <p><strong>Backend:</strong> Node.js and MongoDB with hot-reload for seamless development and deployment.</p>
+        <div class="side-by-side">
+          <p><strong>Frontend:</strong> modern JavaScript frameworks and libraries to create a user-friendly interface that is both intuitive and engaging. The focus was on crafting a responsive design that adapts to various devices and screen sizes, ensuring accessibility and a positive user experience.</p>
+          <p><strong>Backend:</strong> leveraged Node.js and MongoDB to create a scalable and efficient database that stores a vast collection of recipes. The implementation of Nodemon ensured a smoother development process with its hot-reload feature, allowing for real-time updates and testing without the need for manual restarts.</p>
         </div>
+        
+        <iframe src="images/RecipeGrandma.pdf" width="100%" height="500"></iframe>
       </div>
 
       <!-- Proximity -->
       <div id="proximity" class="project-detail hidden">
         <h2>Proximity</h2>
         <p>A GPS-based business model platform to connect student-run businesses with nearby customers.</p>
+        <p>This initiative was born out of a keen observation of the struggles faced by students eager to offer their skills and services for a modest fee, yet hampered by the difficulty of finding sufficient clientele. Recognizing this gap, I embarked on an extensive journey that included thorough industry and market research, the development of user hypotheses, and an in-depth analysis of the strategic landscape, encompassing industry and market forces as well as key trends.</p>
         <p><a href="assets/images/projects_detail/proximity/Proximity_ExplainerVideo.mp4">Watch explainer video</a></p>
-        <p>This startup idea was developed after observing students' difficulty in finding enough clients. We conducted deep market research, built user hypotheses, and analyzed strategic forces in the higher education ecosystem.</p>
-        <img src="assets/images/projects_detail/proximity/proximity_overview.png" alt="Proximity Overview" />
-        <p>The platform empowers student entrepreneurs and offers fast, affordable access to services and goods. Starting at NYU Abu Dhabi, Proximity aims to scale via a university ambassador program.</p>
-        <iframe src="assets/images/projects_detail/proximity/Proximity_Presentation.pdf" width="100%" height="300"></iframe>
+        <img src="images/Proximity_1.png" alt="Proximity 1" class="centered-image"/>
+        <img src="images/Proximity_2.png" alt="Proximity 2" class="centered-image"/>
+        <p>The core objective of Proximity is to facilitate a seamless connection between student entrepreneurs and customers, thereby enabling students to find a wider audience for their services and products. Our platform not only helps these budding businesses increase their deal flow through strategic success management but also provides customers with easy access to a varied range of products and services at competitive prices and with rapid transaction times. What sets Proximity apart in a crowded marketplace is its seller-centric approach, offering a diverse selection of items ranging from handmade crafts to pre-loved goods.</p>
+        <p>As we gear up for launch, our initial focus is on engaging NYU Abu Dhabi students, with plans to extend our reach to adjacent universities through a meticulously planned ambassador program.</p>
+        <iframe src="images/Proximity.pdf" width="100%" height="500"></iframe>
       </div>
     </section>
   </main>
