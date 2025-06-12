@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yeonie Heo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <nav class="sidebar">
+      <h1><a href="#" onclick="goHome()">Yeonie Heo</a></h1>
+      <p class="tagline">Data enthusiast, computational social scientist</p>
+
+      <div class="contact-inline">
+        <a href="mailto:sh5874@nyu.edu" target="_blank">Email</a>
+        <span>·</span>
+        <a href="https://github.com/yeonieheoo" target="_blank">GitHub</a>
+        <span>·</span>
+        <a href="https://linkedin.com/in/yeonieheo" target="_blank">LinkedIn</a>
+      </div>
+
+      <div class="links">
+        <a href="#" onclick="showProject('memory')">MemoryCompanion</a>
+        <a href="#" onclick="showProject('politics')">Political Preference Prediction Model</a>
+        <a href="#" onclick="showProject('recipe')">Reciple Grandma</a>
+        <a href="#" onclick="showProject('proximity')">Proximity</a>
+      </div>
+    </nav>
+
+    <section class="content hidden" id="projectContent">
+      <!-- MemoryCompanion -->
+      <div id="memory" class="project-detail">
+        <h2>MemoryCompanion</h2>
+        <p>A published research project that builds a cutting-edge digital health tool designed to enhance care for <i>Alzheimer's disease (AD) patients</i> using generative AI, specifically through GPT technology.</p>
+        <p>The system personalizes interactions using voice cloning and talking-face mechanisms, making communication feel more familiar and human-like for patients. This aims to alleviate social isolation and improve cognitive function and daily communication for AD patients.</p>
+        <p><strong>MemoryCompanion is built into 4 modules:</strong></p>
+        <ol>
+          <li><b>Real Time Speech-to-Text Module</b>: enables real-time vocal communication between AD patients and the GPT model</li>
+          <li><b>Patient-Centric MemoryCompanion Model Fine-Tuning</b>: processes transcribed input into a tailored AD-Patient-GPT language model for personalized conversation</li>
+          <li><b>Text-to-Speech Synthesization</b>: voices the GPT output</li>
+          <li><b>Face Construction</b>: emotion-sensitive talking-face interface for authentic interaction</li>
+        </ol>
+        <p>This research was published at ML4H 2023 in New Orleans, and presented at QUWA (2023) and NYUAD AI Workshop (2024).</p>
+      </div>
+
+      <!-- Political Preference -->
+      <div id="politics" class="project-detail hidden">
+        <h2>Political Preference Prediction Model</h2>
+        <p>A study that explores the possibility of predicting political preferences based on Twitter content during the 2020 U.S. election cycle.</p>
+        <p>Using Natural Language Processing (NLP), tweets were analyzed for sentiment and topic frequency to correlate with political affiliations.</p>
+        <ol>
+          <li><b>Collect Tweets</b>: Dataset from Kaggle with 1.72M tweets tagged #JoeBiden and #DonaldTrump</li>
+          <li><b>Identify Political Topics</b>: Based on independent, nonpartisan sources</li>
+          <li><b>Topic Tracking</b>: Using spaCy to detect topic frequency and build feature vectors</li>
+          <li><b>Sentiment Analysis</b>: Using VADER to score each tweet</li>
+        </ol>
+        <p>Models used: <i>SVC</i>, <i>Naive Bayes</i>, <i>Logistic Regression</i>, <i>KNN</i>. Results show the potential of social media data in political forecasting.</p>
+        <iframe src="assets/images/projects_detail/political/PoliticalPreferencePredictor.pdf" width="100%" height="300"></iframe>
+      </div>
+
+      <!-- Reciple Grandma -->
+      <div id="recipe" class="project-detail hidden">
+        <h2>Reciple Grandma</h2>
+        <p>A mobile app to recommend recipes based on ingredients you already have.</p>
+        <p>Built using full stack technologies (JavaScript, MongoDB, Docker, Nodemon). <a href="https://github.com/yeonieheoo/final-project-team-recipe-grandma">GitHub Repo</a></p>
+
+        <div class="flex-container">
+          <p><strong>Frontend:</strong> Responsive, intuitive interface with modern JS frameworks.</p>
+          <p><strong>Backend:</strong> Node.js and MongoDB with hot-reload for seamless development and deployment.</p>
+        </div>
+      </div>
+
+      <!-- Proximity -->
+      <div id="proximity" class="project-detail hidden">
+        <h2>Proximity</h2>
+        <p>A GPS-based business model platform to connect student-run businesses with nearby customers.</p>
+        <p><a href="assets/images/projects_detail/proximity/Proximity_ExplainerVideo.mp4">Watch explainer video</a></p>
+        <p>This startup idea was developed after observing students' difficulty in finding enough clients. We conducted deep market research, built user hypotheses, and analyzed strategic forces in the higher education ecosystem.</p>
+        <img src="assets/images/projects_detail/proximity/proximity_overview.png" alt="Proximity Overview" />
+        <p>The platform empowers student entrepreneurs and offers fast, affordable access to services and goods. Starting at NYU Abu Dhabi, Proximity aims to scale via a university ambassador program.</p>
+        <iframe src="assets/images/projects_detail/proximity/Proximity_Presentation.pdf" width="100%" height="300"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showProject(id) {
+      document.getElementById("projectContent").classList.remove("hidden");
+      document.querySelectorAll('.project-detail').forEach(div => {
+        div.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function goHome() {
+      document.getElementById("projectContent").classList.add("hidden");
+      document.querySelectorAll('.project-detail').forEach(div => {
+        div.classList.add('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
