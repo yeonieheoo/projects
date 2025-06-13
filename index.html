@@ -26,7 +26,7 @@
       <div class="links">
         <a href="#memorycompanion" onclick="showProject('memory')">MemoryCompanion</a>
         <a href="#oscar" onclick="showProject('oscar')">Oscar Film Trend</a> 
-        <a href="#politicalprediction" onclick="showProject('politics')">Political Preference Prediction Model</a>
+        <a href="#politicalprediction" onclick="showProject('politics')">Predicting Political Preferences</a>
         <a href="#recipe" onclick="showProject('recipe')">Reciple Grandma</a>
         <a href="#proximity" onclick="showProject('proximity')">Proximity</a>
       </div>
@@ -36,17 +36,17 @@
       <!-- MemoryCompanion -->
       <div id="memory" class="project-detail">
         <h2>MemoryCompanion</h2>
-        <p>A published research project that builds a cutting-edge digital health tool designed to enhance care for <i>Alzheimer's disease (AD) patients</i> using generative AI, specifically through GPT technology.</p>
-        <p>This project was published at Machina Learning for Health (ML4H) in 2023, and presented at QUWA: Sustainable Women Empowerment in Research and Innovation (2023) and NYU Abu Dhabi AI Workshop (2024). </p> <a href="https://arxiv.org/abs/2311.14730">Published Paper</a></p>
+        <p>A published research project that builds a next-generation digital health platform for Alzheimer’s care, integrating fine-tuned GPT-3.5 Turbo, voice cloning, and facial animation to deliver personalized, emotionally resonant support for AD patients.</p>
+        <p>Developed on top of open-source models, <b>MemoryCompanion</b> replicates the voice and persona of familiar individuals to enable human-like conversations tailored to each patient’s memory profile—reducing social isolation and cognitive stress. The project was presented at <b>ML4H (Machine Learning for Health @ NeurIPS)</b> 2023, <b>QUWA: Sustainable Women Empowerment in Research and Innovation</b> (2023), and the <b>NYU Abu Dhabi AI Workshop</b> (2024). </p> <a href="https://arxiv.org/abs/2311.14730">Published Paper</a></p>
         <img src="images/Poster.png" alt="Poster" class="centered-image" />
         <!-- <img src="images/Poster.png" alt="Poster" style="width: 50%;" /> -->
-        <p>The system personalizes interactions using voice cloning and talking-face mechanisms, making communication feel more familiar and human-like for patients. This aims to alleviate social isolation and improve cognitive function and daily communication for AD patients.</p>
-        <p><strong>MemoryCompanion is built into 4 modules:</strong></p>
+        <p><strong>Key contributions:</strong></p>
         <ol>
-          <li><b>Real Time Speech-to-Text Module</b>: enables real-time vocal communication between AD patients and the GPT model</li>
-          <li><b>Patient-Centric MemoryCompanion Model Fine-Tuning</b>: processes transcribed input into a tailored AD-Patient-GPT language model for personalized conversation</li>
-          <li><b>Text-to-Speech Synthesization</b>: voices the GPT output into voice of each user's family member</li>
-          <li><b>Face Construction</b>: emotion-sensitive talking-face interface of the familiy member for authentic interaction</li>
+          <li><b>Architecting a patient-centric LLM pipeline</b>, fine-tuning GPT-3.5 with AD-specific profiles using advanced prompt engineering.</li>
+          <li><b>Designing a synthetic dataset</b> of 10,000 AD patient cases using GPT-4 to address data scarcity and privacy concerns.</li>
+          <li><b>Building a multimodal care interface</b> with speech-to-text, Coqui TTS voice cloning, and StyleTalk-based talking-face synthesis.</li>
+          <li><b>Defining evaluation metrics</b> across empathy, accuracy, conversational flow, and error handling to benchmark real-world performance.</li>
+          <li><b>Co-leading the open-source release</b> to foster transparency, reproducibility, and community impact in healthcare AI.</li>
         </ol>
         <iframe src="images/OfficialMemoryCompanion.pdf" width="100%" height="500"></iframe>
       </div>
@@ -63,24 +63,32 @@
           <img src="images/Oscar_1.png" alt="Oscar 1" class="side-image" />
         </div>
         
-        <ol>
-          <li><b>Plot Analysis</b>: Employing the 'stm' library in R for Structural Topic Modeling (STM) alongside textnets for plot summary analysis, we identified 10 predominant themes such as Crime, Family, War, and Empire. Despite a clear genre preference, a decrease in Love-themed movies was noted. Through textnets, thematic interconnections across decades were unveiled, suggesting avenues for deeper future investigations into these linkages.</li>
-          <li><b>Review Analysis</b>: Differentiating between audience and critic reviews unveiled distinct preferences: audiences often discussed actors and filmic elements generically, whereas critics delved into technical merits and realism. Contrary to expectations, reviews trended towards casual recommendations rather than analytical deep dives.</li>
-        </ol>
+        <div class="side-by-side">
+          <p><strong>Plot Analysis</strong>: Employing the 'stm' library in R for Structural Topic Modeling (STM) alongside textnets for plot summary analysis, we identified 10 predominant themes such as Crime, Family, War, and Empire. Despite a clear genre preference, a decrease in Love-themed movies was noted. Through textnets, thematic interconnections across decades were unveiled, suggesting avenues for deeper future investigations into these linkages.</p>
+          <p><strong>Review Analysis</strong>: Differentiating between audience and critic reviews unveiled distinct preferences: audiences often discussed actors and filmic elements generically, whereas critics delved into technical merits and realism. Contrary to expectations, reviews trended towards casual recommendations rather than analytical deep dives.</p>
+        </div>
+
         <iframe src="images/Oscar.pdf" width="100%" height="500"></iframe>
       </div>
 
       <!-- Political Preference -->
       <div id="politics" class="project-detail hidden">
-        <h2>Political Preference Prediction Model</h2>
-        <p>A machine learning-based study that explores the possibility of predicting political preferences based on Twitter content during the 2020 U.S. election cycle.</p>
-        <p>Natural Language Processing: tweets were analyzed for sentiment and topic frequency to correlate with political affiliations.</p>
+        <h2>Predicting Political Preferences</h2>
+        <p>Built a supervised machine learning pipeline to classify political stance (Democrat vs. Republican) using 2020 U.S. election tweets. Our model combines sentiment analysis and topic frequency features to identify user alignment based on tweet content.</p>
         <ol>
-          <li><b>Collect Tweets</b>: Dataset from Kaggle with 1.72M tweets tagged #JoeBiden and #DonaldTrump</li>
-          <li><b>Identify Political Topics</b>: Based on independent, nonpartisan sources</li>
-          <li><b>Topic Tracking</b>: Using spaCy to detect topic frequency and build feature vectors</li>
-          <li><b>Sentiment Analysis</b>: Using VADER to score each tweet and trained with SVC, Naive Bayes, Logistic Regression, and KNN models</li>
+          <li><b>Data Source</b>: 1.72M tweets with #JoeBiden and #DonaldTrump hashtags from Kaggle (due to API limitations).</li>
+          <li><b>Preprocessing</b>: Used spaCy for lemmatization and political topic detection across 17 manually-curated categories (e.g., abortion, economy, healthcare).</li>
+          <li><b>Feature Engineering</b>: Constructed frequency vectors per topic; sentiment scores computed with VADER were used to weight each topic's presence per tweet.</li>
+          <li><b>Modeling</b>: Trained multiple binary classifiers (SVC, Logistic Regression, Naive Bayes, K-NN). Best accuracy achieved: <b>57.22%</b>, aligning with prior research given the ambiguity of moderate political tweets.</li>       
         </ol>
+
+        <p><strong>Key insights:</strong> Removing zero-sentiment tweest improved model accuracy by ~6%. Topic weighting via sentiment did not outperform unweighted topic frequency vectors. Classification accuracy was significantly better for extreme political tweets, consistent with literature findings.</p>
+        <!-- <ol>
+          <li>Removing zero-sentiment tweets improved model accuracy by ~6%.</li>
+          <li>Topic weighting via sentiment did not outperform unweighted topic frequency vectors.</li>
+          <li>Classification accuracy was significantly better for extreme political tweets, consistent with literature findings.</li>
+        </ol> -->
+
         <iframe src="images/PoliticalPreference.pdf" width="100%" height="500"></iframe>
       </div>
 
